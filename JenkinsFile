@@ -19,9 +19,15 @@ pipeline {
         }
 
         stage('Test') {
+
+            tools {
+                nodejs "Node23"  // Use the Node.js version configured in Jenkins
+            }
+
             steps {
                 sh '''
                     test -f build/index.html
+                    npm run test
                 '''
             }
         }
