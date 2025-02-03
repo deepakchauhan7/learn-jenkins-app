@@ -11,6 +11,8 @@ pipeline {
                 sh '''
                     npm -v
                     node -v
+                    npm ci
+                    npm run build
                     ls -la
                 '''
             }
