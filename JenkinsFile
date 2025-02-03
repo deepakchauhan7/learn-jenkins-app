@@ -32,4 +32,11 @@ pipeline {
             }
         }
     }
+
+    post {
+        always {
+            archiveArtifacts artifacts: 'build/**', onlyIfSuccessful: true
+            junit 'test-results/junit.xml'
+        }
+    }
 }
